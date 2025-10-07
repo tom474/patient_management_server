@@ -27,7 +27,7 @@ public class KafkaProducer {
         try {
             kafkaTemplate.send("patient", event.toByteArray());
         } catch (Exception e) {
-            log.error("Error sending PatientCreated event: {}", event, e);
+            log.error("Error sending PatientCreated event: {}", e.getMessage());
         }
     }
 }

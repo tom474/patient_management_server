@@ -217,11 +217,11 @@ KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092,EXTERNAL://localhost:9094;
 Add the following to `application.properties`
 
 ```
-spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
-spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.ByteArrayDeserializer
+spring.kafka.producer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
+spring.kafka.producer.value-deserializer=org.apache.kafka.common.serialization.ByteArrayDeserializer
 ```
 
-# Notification Service
+# Analytics Service
 
 ---
 
@@ -287,6 +287,15 @@ Update the build section in pom.xml with the following
             </plugin>
         </plugins>
     </build>
+```
+
+## Kafka Consumer Setup (Analytics Service)
+
+Add the following to `application.properties`
+
+```
+spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
+spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.ByteArrayDeserializer
 ```
 
 # Auth service
