@@ -2,6 +2,7 @@ package com.tom474.authservice.services;
 
 import com.tom474.authservice.dtos.LoginRequestDTO;
 import com.tom474.authservice.utils.JwtUtil;
+import io.jsonwebtoken.JwtException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +26,14 @@ public class AuthService {
                 .map(user -> jwtUtil.generateToken(user.getEmail(), user.getRole()));
 
         return token;
+    }
+
+    public boolean validateToken(String token) {
+        try {
+            jwtUtil.validateToken(token);
+            return true;
+        } catch (JwtException e) {
+            return false;
+        }
     }
 }
