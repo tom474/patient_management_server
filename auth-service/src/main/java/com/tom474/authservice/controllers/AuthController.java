@@ -4,6 +4,7 @@ import com.tom474.authservice.dtos.LoginRequestDTO;
 import com.tom474.authservice.dtos.LoginResponseDTO;
 import com.tom474.authservice.services.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/auth")
+@Tag(name = "Authentication", description = "API for authentication.")
 public class AuthController {
     private final AuthService authService;
 
@@ -43,3 +46,4 @@ public class AuthController {
                 : ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 }
+
