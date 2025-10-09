@@ -1,0 +1,14 @@
+### POST request to create patient through api gateway
+POST http://localhost:4004/api/patients
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Cuong Tran",
+  "email": "cuongtran@gmail.com",
+  "address": "123 Main Street",
+  "dateOfBirth": "2004-07-04",
+  "registeredDate": "2025-10-06"
+}
+
+###

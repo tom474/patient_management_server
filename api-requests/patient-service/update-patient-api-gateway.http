@@ -1,0 +1,13 @@
+### PUT request to update patient through api gateway
+PUT http://localhost:4004/api/patients/123e4567-e89b-12d3-a456-426614174000
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Updated Test User",
+  "email": "testuser@gmail.com",
+  "address": "123 Main Street",
+  "dateOfBirth": "2004-07-04"
+}
+
+###
